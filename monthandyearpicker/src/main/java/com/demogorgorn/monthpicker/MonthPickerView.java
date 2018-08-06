@@ -221,15 +221,15 @@ class MonthPickerView extends FrameLayout {
             cancel.setTextColor(headerBgColor);
         }
 
-        if (_positiveText != -1) {
+        if (_positiveText == -1) {
             ok.setText(getContext().getResources().getString(R.string.positive_text));
         } else
-            ok.setText(_positiveText);
+            ok.setText(getContext().getResources().getString(_positiveText));
 
-        if (_negativeText != -1) {
+        if (_negativeText == -1) {
             cancel.setText(getContext().getResources().getString(R.string.negative_text));
         } else
-            cancel.setText(_negativeText);
+            cancel.setText(getContext().getResources().getString(_negativeText));
 
 
 
