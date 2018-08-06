@@ -388,12 +388,12 @@ public class MonthPickerDialog extends AlertDialog implements OnClickListener, O
         }
 
         public Builder setPositiveText(int resId) {
-            _positiveText = resId;
+            this._positiveText = resId;
             return this;
         }
 
         public Builder setNegativeText(int resId) {
-            _negativeText = resId;
+            this._negativeText = resId;
             return this;
         }
 
@@ -617,6 +617,9 @@ public class MonthPickerDialog extends AlertDialog implements OnClickListener, O
 
             if (_monthFormat != null)
                 monthPickerDialog.setMonthFormat(_monthFormat);
+
+            monthPickerDialog.setPositiveText(_positiveText);
+            monthPickerDialog.setNegativeText(_negativeText);
 
             monthPickerDialog.setMonthSelectedCircleSize(_monthSelectedCircleSize);
 
