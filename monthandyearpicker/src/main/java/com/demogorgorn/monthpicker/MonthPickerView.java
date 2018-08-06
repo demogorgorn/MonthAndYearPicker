@@ -116,11 +116,7 @@ class MonthPickerView extends FrameLayout {
         _monthTextSize = a.getDimensionPixelSize(R.styleable.monthPickerDialog_monthTextSize, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
                 16, context.getResources().getDisplayMetrics()));
 
-        if (_positiveText == -1)
-            _positiveText = R.string.positive_text;
 
-        if (_negativeText == -1)
-            _negativeText = R.string.negative_text;
 
          if (monthFontColorNormal == 0) {
 
@@ -225,8 +221,17 @@ class MonthPickerView extends FrameLayout {
             cancel.setTextColor(headerBgColor);
         }
 
-        ok.setText(_positiveText);
-        cancel.setText(_negativeText);
+        if (_positiveText == -1) {
+            ok.setText(getContext().getResources().getString(R.string.positive_text));
+        } else
+            ok.setText(_positiveText);
+
+        if (_negativeText == -1) {
+            cancel.setText(getContext().getResources().getString(R.string.negative_text));
+        } else
+            cancel.setText(_negativeText);
+
+
 
         if (_headerFontColorSelected != 0)
             _month.setTextColor(_headerFontColorSelected);
