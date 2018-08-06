@@ -221,8 +221,8 @@ class MonthPickerView extends FrameLayout {
             cancel.setTextColor(headerBgColor);
         }
 
-        ok.setText(getContext().getResources().getString(R.string.positive_text));
-        cancel.setText(getContext().getResources().getString(R.string.negative_text));
+        /*ok.setText(getContext().getResources().getString(R.string.positive_text));
+        cancel.setText(getContext().getResources().getString(R.string.negative_text));*/
 
         if (_headerFontColorSelected != 0)
             _month.setTextColor(_headerFontColorSelected);
