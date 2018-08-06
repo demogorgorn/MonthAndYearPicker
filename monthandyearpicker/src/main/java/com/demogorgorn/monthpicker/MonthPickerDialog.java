@@ -171,6 +171,14 @@ public class MonthPickerDialog extends AlertDialog implements OnClickListener, O
         _monthPicker.setMonthSelectedCircleSize(size);
     }
 
+    public void setPositiveText(int resId) {
+        _monthPicker.setPositiveText(resId);
+    }
+
+    public void setNegativeText(int resId) {
+        _monthPicker.setNegativeText(resId);
+    }
+
     private void setMinYear(int minYear) {
         _monthPicker.setMinYear(minYear);
     }
@@ -230,6 +238,8 @@ public class MonthPickerDialog extends AlertDialog implements OnClickListener, O
         private String _monthFormat = null;
         private String _monthTitleFormat = null;
         private int _monthSelectedCircleSize = 43;
+        private int _positiveText = -1;
+        private int _negativeText = -1;
 
         /**
          * Build a Dialog with month and year with given context.
@@ -374,6 +384,16 @@ public class MonthPickerDialog extends AlertDialog implements OnClickListener, O
          */
         public Builder setLocale(Locale locale) {
             this._locale = locale;
+            return this;
+        }
+
+        public Builder setPositiveText(int resId) {
+            _positiveText = resId;
+            return this;
+        }
+
+        public Builder setNegativeText(int resId) {
+            _negativeText = resId;
             return this;
         }
 

@@ -16,7 +16,9 @@ setMonthFormat(String format) |  Format for the month label in the list.
 setLocale(Locale locale) |  Now there is possibility to use custom Locale. In the original version month names were in a predefined in resources array of strings (only in English). In the case you don't want to specify the locale - I've added the method to get current system locale. 
 setMonthNamesArray(int arrayResId) | This one is good! You can specify id of string array in resources for month labels. If array is translated in other language - library will use it. Also the month name in header will be taken from this array.
 setMonthTitleFormat(String format) | Format for the month label in the header of dialog.
-setMonthSelectedCircleSize(int size) | Size of circle of selected month item.
+setMonthSelectedCircleSize(int size) | Size of circle of selected month item (note that size is representing DP value).
+setPositiveText(int resId) | Set resource string used for the positive button's text
+setNegativeText(int resId) | Set resource string used for the negative button's text
 
 And styles (examples):
 

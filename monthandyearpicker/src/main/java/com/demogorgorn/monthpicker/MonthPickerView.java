@@ -42,6 +42,9 @@ class MonthPickerView extends FrameLayout {
     OnDateSet _onDateSet;
     OnCancel _onCancel;
 
+    int _positiveText = -1;
+    int _negativeText = -1;
+
     private int _monthTextSize;
     /*private static final int[] ATTRS_TEXT_COLOR = new int[] {
             com.android.internal.R.attr.textColor};
@@ -109,6 +112,12 @@ class MonthPickerView extends FrameLayout {
         _locale = DateHelper.getCurrentLocale(context);
         _monthTextSize = a.getDimensionPixelSize(R.styleable.monthPickerDialog_monthTextSize, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
                 16, context.getResources().getDisplayMetrics()));
+
+        if (_positiveText == -1)
+            _positiveText = R.string.positive_text;
+
+        if (_negativeText == -1)
+            _negativeText = R.string.negative_text;
 
          if (monthFontColorNormal == 0) {
 
@@ -212,6 +221,9 @@ class MonthPickerView extends FrameLayout {
             ok.setTextColor(headerBgColor);
             cancel.setTextColor(headerBgColor);
         }
+
+        ok.setText(_positiveText);
+        cancel.setText(_negativeText);
 
         if (_headerFontColorSelected != 0)
             _month.setTextColor(_headerFontColorSelected);
@@ -353,6 +365,14 @@ class MonthPickerView extends FrameLayout {
     protected void setMonthSelectedCircleSize(int size) {
         _monthSelectedCircleSize = size;
         _monthViewAdapter.setMonthSelectedCircleSize(size);
+    }
+
+    public void setPositiveText(int resId) {
+        _positiveText = resId;
+    }
+
+    public void setNegativeText(int resId) {
+        _negativeText = resId;
     }
 
     protected void setMinYear(int minYear) {
