@@ -123,7 +123,7 @@ Step 1. Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
     dependencies {
-        implementation 'com.github.demogorgorn:MonthAndYearPicker:1.1.9'
+        implementation 'com.github.demogorgorn:MonthAndYearPicker:1.0.11'
     }
 
 or Maven
@@ -143,7 +143,7 @@ Step 2. Add the dependency
     <dependency>
         <groupId>com.github.demogorgorn</groupId>
         <artifactId>MonthAndYearPicker</artifactId>
-        <version>1.1.9</version>
+        <version>1.0.11</version>
     </dependency>
    
 
