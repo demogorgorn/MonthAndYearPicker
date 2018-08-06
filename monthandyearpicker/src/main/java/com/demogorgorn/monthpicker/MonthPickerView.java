@@ -221,8 +221,7 @@ class MonthPickerView extends FrameLayout {
             cancel.setTextColor(headerBgColor);
         }
 
-        /*ok.setText(getContext().getResources().getString(R.string.positive_text));
-        cancel.setText(getContext().getResources().getString(R.string.negative_text));*/
+
 
         if (_headerFontColorSelected != 0)
             _month.setTextColor(_headerFontColorSelected);
@@ -368,12 +367,16 @@ class MonthPickerView extends FrameLayout {
 
     public void setPositiveText(int resId) {
         _positiveText = resId;
-        ok.setText(resId);
+
+        if (resId != -1)
+            ok.setText(resId);
     }
 
     public void setNegativeText(int resId) {
         _negativeText = resId;
-        cancel.setText(resId);
+
+        if (resId != -1)
+            cancel.setText(resId);
     }
 
     protected void setMinYear(int minYear) {
