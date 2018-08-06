@@ -42,8 +42,8 @@ class MonthPickerView extends FrameLayout {
     OnDateSet _onDateSet;
     OnCancel _onCancel;
 
-    int _positiveText = -1;
-    int _negativeText = -1;
+    int _positiveText;
+    int _negativeText;
 
     private int _monthTextSize;
     /*private static final int[] ATTRS_TEXT_COLOR = new int[] {
