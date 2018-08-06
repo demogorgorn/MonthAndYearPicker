@@ -42,8 +42,11 @@ class MonthPickerView extends FrameLayout {
     OnDateSet _onDateSet;
     OnCancel _onCancel;
 
-    int _positiveText;
-    int _negativeText;
+    int _positiveText = -1;
+    int _negativeText = -1;
+
+    TextView ok;
+    TextView cancel;
 
     private int _monthTextSize;
     /*private static final int[] ATTRS_TEXT_COLOR = new int[] {
@@ -210,8 +213,8 @@ class MonthPickerView extends FrameLayout {
         RelativeLayout _pickerBg = (RelativeLayout) findViewById(R.id.picker_view);
         LinearLayout _header = (LinearLayout) findViewById(R.id.header);
         RelativeLayout _actionBtnLay = (RelativeLayout) findViewById(R.id.action_btn_lay);
-        TextView ok = (TextView) findViewById(R.id.ok_action);
-        TextView cancel = (TextView) findViewById(R.id.cancel_action);
+        ok = (TextView) findViewById(R.id.ok_action);
+        cancel = (TextView) findViewById(R.id.cancel_action);
 
 
         if (actionButtonColor != 0) {
@@ -369,10 +372,12 @@ class MonthPickerView extends FrameLayout {
 
     public void setPositiveText(int resId) {
         _positiveText = resId;
+        ok.setText(resId);
     }
 
     public void setNegativeText(int resId) {
         _negativeText = resId;
+        cancel.setText(resId);
     }
 
     protected void setMinYear(int minYear) {
